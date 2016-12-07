@@ -1,0 +1,19 @@
+<h1>Image Gallery</h1>
+
+<ul>
+    <li ng-repeat="image in $ctrl.imageList">
+        <image-detail image="image"></image-detail>
+    </li>
+</ul>
+
+<ul>
+    <li ng-repeat="image in $ctrl.imageList">
+        <image-thumb image="image"></image-thumb>
+    </li>
+</ul>
+
+<ul>
+    <li ng-repeat="image in $ctrl.imageList">
+        <image-full image="image"></image-full>
+    </li>
+</ul>
