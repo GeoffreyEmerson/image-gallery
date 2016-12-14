@@ -4,14 +4,17 @@
   "description": "Code Fellows 401 Image Gallery Project - Back End with Front End Bundle",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
+    "test": "NODE_ENV=test mocha",
     "start": "node server.js"
   },
   "author": "Geoffrey Emerson <geoffrey.emerson.git@gmail.com> (http://geoffreyemerson.com)",
   "license": "ISC",
   "dependencies": {
-    "expresss": "0.0.0",
-    "mongoose": "^4.7.2"
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.2",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
