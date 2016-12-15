@@ -6,15 +6,16 @@ export default {
   controller
 };
 
-function controller() {
+controller.$inject = ['imageService'];
+function controller(imageService) {
   this.styles = styles;
-  this.imageList = [
-    {
-      title: 'Bunny',
-      description: 'A cute bunny.',
-      url: 'http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg'
-    }
-  ];
+
+  imageService
+  .get()
+  .then( images => {
+    this.imageList = images;
+    console.log('imageList on load:',this.imageList);
+  });
 
   this.viewOptions = ['all','detail','thumb','full'];
 
