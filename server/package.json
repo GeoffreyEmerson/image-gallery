@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=test mocha",
+    "wintest": "mocha",
     "start": "node server.js"
   },
   "author": "Geoffrey Emerson <geoffrey.emerson.git@gmail.com> (http://geoffreyemerson.com)",

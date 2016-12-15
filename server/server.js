@@ -1,10 +1,18 @@
-'use strict';
-
 const app = require('./lib/app');
-require( './lib/setup-mongoose' ); // starts up the Mongo connection so that there's no delay the first time a request is made
+const http = require('http');
 
 const port = process.env.PORT || 3000;
+const server = http.createServer(app);
 
-app.listen(port);
+// Async - Create Mongo connection
+require( './lib/setup-mongoose' );
 
-console.log('Server running on', port);
+// Async - Lookup current IP
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+  console.log('Current IP:',add,fam);
+});
+
+// Async - Start listening for http requests
+server.listen(port, () => {
+  console.log('Server running on localhost:' + server.address().port);
+});
