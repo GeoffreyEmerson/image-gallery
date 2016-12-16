@@ -4,12 +4,17 @@ import styles from './image-full.css';
 export default {
   template,
   bindings: {
-    image: '='
+    image: '=',
+    remove: '<'
   },
   controller
 };
 
 function controller() {
   this.styles = styles;
+
+  this.delete = () => {
+    this.remove(this.image);
+  };
 }
 

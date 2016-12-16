@@ -1,21 +1,26 @@
 <h1>Image Gallery</h1>
 
-<select ng-model="$ctrl.selection" ng-options="option for option in $ctrl.viewOptions"><select>
+<add-image add="$ctrl.add"></add-image>
+
+<p>
+    <select ng-model="$ctrl.selection" ng-options="option for option in $ctrl.viewOptions">
+    </select>
+</p>
 
 <ul ng-show="$ctrl.selection=='detail' || $ctrl.selection=='all'">
     <li ng-repeat="image in $ctrl.imageList">
-        <image-detail image="image"></image-detail>
+        <image-detail image="image" remove="$ctrl.remove"></image-detail>
     </li>
 </ul>
 
 <ul ng-show="$ctrl.selection=='thumb' || $ctrl.selection=='all'">
     <li ng-repeat="image in $ctrl.imageList">
-        <image-thumb image="image"></image-thumb>
+        <image-thumb image="image" remove="$ctrl.remove"></image-thumb>
     </li>
 </ul>
 
 <ul ng-show="$ctrl.selection=='full' || $ctrl.selection=='all'">
     <li ng-repeat="image in $ctrl.imageList">
-        <image-full image="image"></image-full>
+        <image-full image="image" remove="$ctrl.remove"></image-full>
     </li>
 </ul>

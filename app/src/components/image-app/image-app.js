@@ -16,31 +16,50 @@ function controller(imageService) {
   .then( images => {
     this.imageList = images;
     this.loading = false;
-
   });
 
   this.viewOptions = ['all','detail','thumb','full'];
 
   this.selection = 'all';
 
-  this.add = function(image) {
+  this.add = image => {
     this.loading = true;
     imageService
     .add(image)
-    .then( image => {
-      this.imageList.push(image);
+    .then( result => {
+      delete result.$$hashKey;
+      this.imageList.push(result);
       this.loading = false;
+    })
+    .catch( err => {
+      console.log('error in image-app add method:',err);
     });
   };
 
-  this.remove = function(image) {
+  this.remove = image => {
     this.loading = true;
     imageService
     .remove(image._id)
-    .then( image => {
+    .then( deleted => {
       this.loading = false;
-      const index = this.imageList.indexOf(image);
+      const index = indexOfId(this.imageList, deleted);
       if (index != -1) this.imageList.splice(index,1);
+      else console.log('Image not found in current array:',deleted,this.imageList);
+    })
+    .catch( err => {
+      console.log('Error in image-app remove method:',err);
     });
   };
+
+  // Custom function to search by _id in an array of objects
+  function indexOfId(arr,item) {
+    let index = -1;
+    for (let i=0; i<arr.length; i++) {
+      if(arr[i]._id == item._id) {
+        index = i;
+        break;
+      }
+    }
+    return index;
+  }
 }
