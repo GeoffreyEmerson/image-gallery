@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint && karma start",
+    "test": "karma start --single-run",
     "start": "webpack-dev-server --inline",
     "build": "npm run lint && webpack"
   },
