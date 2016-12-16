@@ -30,7 +30,7 @@ router
   })
 
   .put('/:id', bodyParser, (req, res, next) => {
-    Image.findByIdAndUpdate(req.params.id, req.body)
+    Image.findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then( saved => res.send(saved) )
     .catch(next);
   })
