@@ -1,4 +1,4 @@
-describe( 'Image component', () => {
+describe( 'ImageApp component', () => {
   const assert = chai.assert;
 
   // this will hold our image "store"

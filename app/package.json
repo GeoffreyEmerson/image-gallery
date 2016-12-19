@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "karma start --single-run",
+    "watch": "karma start",
     "start": "webpack-dev-server --inline",
     "build": "npm run lint && webpack"
   },
