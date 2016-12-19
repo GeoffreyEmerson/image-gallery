@@ -3,11 +3,16 @@ import template from './image-detail.html';
 export default {
   template,
   bindings: {
-    image: '='
+    image: '=',
+    remove: '<'
   },
   controller
 };
 
 function controller() {
-  // nothing here yet
+
+  this.delete = () => {
+    this.remove(this.image);
+  };
+
 }
