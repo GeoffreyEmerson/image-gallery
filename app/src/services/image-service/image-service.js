@@ -16,8 +16,8 @@ export default function imageService($http, apiUrl) {
       return $http.put(`${apiUrl}/images/${image._id}`, image)
         .then( res => res.data );
     },
-    remove(id) {
-      return $http.delete(`${apiUrl}/images/${id}`)
+    remove(image) {
+      return $http.delete(`${apiUrl}/images/${image._id}`)
         .then( res => res.data );
     }
   };

@@ -62,7 +62,7 @@ describe('Image service', () => {
       title: 'whatever',
       description: 'whatever',
       url: 'whatever',
-      id: '12345'
+      _id: '12345'
     };
     const id = '12345';
 
@@ -71,7 +71,7 @@ describe('Image service', () => {
     .respond(newImage);
 
     imageService
-    .remove(id)
+    .remove(newImage)
     .then(delImage => {
       assert.deepEqual(delImage, newImage);
       done();

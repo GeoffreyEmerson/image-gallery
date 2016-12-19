@@ -9,8 +9,14 @@ export default {
 controller.$inject = ['imageService'];
 function controller(imageService) {
   this.styles = styles;
-  this.loading = true;
+  this.viewOptions = ['all','detail','thumb','full'];
+  this.selection = 'all';
 
+/********************
+  Startup procedure
+*********************/
+
+  this.loading = true;
   imageService
   .get()
   .then( images => {
@@ -18,16 +24,15 @@ function controller(imageService) {
     this.loading = false;
   });
 
-  this.viewOptions = ['all','detail','thumb','full'];
-
-  this.selection = 'all';
+/********************
+  Component methods
+*********************/
 
   this.add = image => {
     this.loading = true;
     imageService
     .add(image)
     .then( result => {
-      delete result.$$hashKey;
       this.imageList.push(result);
       this.loading = false;
     })
@@ -39,7 +44,7 @@ function controller(imageService) {
   this.remove = image => {
     this.loading = true;
     imageService
-    .remove(image._id)
+    .remove(image)
     .then( deleted => {
       this.loading = false;
       const index = indexOfId(this.imageList, deleted);
