@@ -1,0 +1,16 @@
+:local(.borderBox) {
+  border: 1px dashed black;
+  width: 100%;
+}
+
+:local(.full) {
+  border: 2px solid red;
+  max-width: 85%;
+  margin: auto;
+}
+
+image-full {
+  div {
+    background-color: lightsteelblue
+  }
+}

@@ -1,7 +1,0 @@
-:local(.borderBox) {
-    border: 1px dashed black;
-}
-
-:local(.full) {
-    border: 2px solid red;
-}

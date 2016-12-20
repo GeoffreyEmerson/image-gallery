@@ -1,5 +1,5 @@
 import template from './image-thumb.html';
-import styles from './image-thumb.css';
+import styles from './image-thumb.scss';
 
 export default {
   template,
