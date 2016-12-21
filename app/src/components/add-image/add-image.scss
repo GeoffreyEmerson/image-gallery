@@ -1,10 +1,45 @@
-add-image {
-  color: hotpink;
+@import 'corners';
 
-  div {
-    background-color: lightblue;
+add-image {
+
+  div.outer {
+    display: inline-block;
+    background-color: slategray;
     margin: 1rem;
-    padding: .5rem
+    padding: .5rem;
+    border: 3px solid #bbb;
+    @include rounded(7px);
   }
 
+  div.inner {
+    display: inline-block;
+  }
+
+  .align-top {
+    vertical-align: top;
+  }
+
+  .big-button {
+    font-size: 1rem;
+    height: 51px;
+    border: 2px solid #ddd;
+    margin: 2px;
+    @include rounded(5px);
+    box-shadow: 2px 2px #333;
+
+  }
+
+  .label {
+    display: inline-block;
+    min-width: 100px;
+    padding-right: 1rem;
+    color: black;
+    text-align: right;
+  }
+
+  input {
+    background-color: #bbb;
+    border: none;
+    min-width: 450px;
+  }
 }

@@ -1,16 +1,9 @@
-:local(.borderBox) {
-  border: 1px dashed black;
-  width: 100%;
-}
+// .full-container {
+//   width: 100%;
+// }
 
-:local(.full) {
-  border: 2px solid red;
-  max-width: 85%;
+.full-img {
+  border: 5px solid #333;
+  width: 95%;
   margin: auto;
-}
-
-image-full {
-  div {
-    background-color: lightsteelblue
-  }
 }

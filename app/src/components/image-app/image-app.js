@@ -9,8 +9,8 @@ export default {
 controller.$inject = ['imageService'];
 function controller(imageService) {
   this.styles = styles;
-  this.viewOptions = ['all','detail','thumb','full'];
-  this.selection = 'all';
+  this.viewOptions = ['thumb','full','detail'];
+  this.view = 'detail';
 
 /********************
   Startup procedure
@@ -27,6 +27,13 @@ function controller(imageService) {
 /********************
   Component methods
 *********************/
+  this.viewSelect = function(choice) {
+    this.view = choice;
+  };
+
+  this.viewSelect = function(choice) {
+    if (choice == 'thumb') return 'selected';
+  };
 
   this.add = image => {
     this.loading = true;
