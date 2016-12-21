@@ -3,5 +3,5 @@
   <p>{{$ctrl.image.description}}</p>
   <img ng-src="{{$ctrl.image.url}}" class="thumb"></img>
   <br>
-  <button ng-click="$ctrl.delete()">Delete</button>
+  <button ng-click="$ctrl.delete($event)">Delete</button>
 </div>
