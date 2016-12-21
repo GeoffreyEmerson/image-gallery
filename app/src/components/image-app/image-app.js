@@ -10,7 +10,7 @@ controller.$inject = ['imageService'];
 function controller(imageService) {
   this.styles = styles;
   this.viewOptions = ['thumb','full','detail'];
-  this.view = 'detail';
+  this.view = 'thumb';
 
 /********************
   Startup procedure
