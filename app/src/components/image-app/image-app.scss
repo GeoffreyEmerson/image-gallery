@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Molle:400i');
+@import 'corners';
+
+$unitPadding: 1.5rem;
+
+#appName {
+  font-family: 'Molle', cursive;
+  font-size: 2rem;
+  background-color: slategray;
+  display: inline-block;
+  margin: 1%;
+  padding: $unitPadding;
+
+  @include rounded(7px);
+}
+
+.view-button-container {
+  width: 100%;
+  text-align: center;
+}
+
+.view-button {
+  display: inline-block;
+  width: 20%;
+  margin: 1rem 1rem 0;
+  padding: 1rem;
+  background-color: #333;
+  color: slategrey;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 10px 10px 0 0;
+}
+.selected {
+  background-color: slategray;
+  color: black;
+}
+
+.view-container {
+  background-color: #333;
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 3px solid slategrey;
+  @include rounded(7px);
+}
+
+.thumb-view, .full {
+  width: 100%;
+  text-align: center;
+}
+
+.thumb-container {
+  display: inline-block;
+  width: 21%;
+  max-width: 200px;
+  min-width: 130px;
+  margin: .5%;
+  padding: 1%;
+  border: 1px solid black;
+  background-color: slategrey;
+  box-shadow: 0 0 5px #aaa
+}
+
+.full-container {
+  display: block;
+  width: 99%;
+  padding: .5%;
+  border: 1px solid black;
+  background-color: slategrey;
+  box-shadow: 0 0 5px #aaa;
+  margin-bottom: 2rem;
+}
+
+.detail-container {
+  display: block;
+  width: 99%;
+  padding: .5%;
+  border: 1px solid black;
+  background-color: slategrey;
+  box-shadow: 0 0 5px #aaa;
+}

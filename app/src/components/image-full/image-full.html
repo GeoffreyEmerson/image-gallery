@@ -1,6 +1,6 @@
-<div ng-class="$ctrl.styles.borderBox">
-  <h3>{{$ctrl.image.title}}</h3>
+<div>
+  <h2>{{$ctrl.image.title}}</h2>
   <p>{{$ctrl.image.description}}</p>
-  <img ng-src="{{$ctrl.image.url}}" ng-class="$ctrl.styles.full"></img>
+  <img ng-src="{{$ctrl.image.url}}" class="full-img"></img>
   <button ng-click="$ctrl.delete()">Delete</button>
 </div>

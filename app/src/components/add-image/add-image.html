@@ -1,4 +1,10 @@
-Title:<input ng-model="$ctrl.title" type="text" name="title"></br>
-Description:<input ng-model="$ctrl.description" type="text" name="description"></br>
-URL:<input ng-model="$ctrl.url" type="text" name="url"></br>
-<button ng-click="$ctrl.submit()">Add Image</button>
+<div class="outer">
+  <div class="inner">
+    <span class="label">Title:</span><input ng-model="$ctrl.title" type="text" name="title"></br>
+    <span class="label">Description:</span><input ng-model="$ctrl.description" type="text" name="description"></br>
+    <span class="label">URL:</span><input ng-model="$ctrl.url" type="text" name="url"></br>
+  </div>
+  <div class="inner align-top">
+    <button class="big-button" ng-click="$ctrl.submit()">Add Image</button>
+  </div>
+</div>

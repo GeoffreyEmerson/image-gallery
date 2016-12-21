@@ -1,26 +1,31 @@
-<h1>Image Gallery</h1>
+<div>
+  <div id="appName">Image Gallery</div>
+</div>
 
 <add-image add="$ctrl.add"></add-image>
 
-<p>
-    <select ng-model="$ctrl.selection" ng-options="option for option in $ctrl.viewOptions">
-    </select>
-</p>
+<div class="view-button-container">
+  <div class="view-button" ng-class="{selected: $ctrl.view=='thumb'}" ng-click="$ctrl.view='thumb'">Thumbnail</div>
+  <div class="view-button" ng-class="{selected: $ctrl.view=='full'}" ng-click="$ctrl.view='full'">Full Size</div>
+  <div class="view-button" ng-class="{selected: $ctrl.view=='detail'}" ng-click="$ctrl.view='detail'">Text List</div>
+</div>
 
-<ul ng-show="$ctrl.selection=='detail' || $ctrl.selection=='all'">
-    <li ng-repeat="image in $ctrl.imageList">
-        <image-detail image="image" remove="$ctrl.remove"></image-detail>
-    </li>
-</ul>
+<div class="view-container">
+  <div ng-show="$ctrl.view=='thumb'" class="thumb-view"  ng-click="$ctrl.view='full'">
+    <div ng-repeat="image in $ctrl.imageList" class="thumb-container">
+      <image-thumb image="image" remove="$ctrl.remove"></image-thumb>
+    </div>
+  </div>
 
-<ul ng-show="$ctrl.selection=='thumb' || $ctrl.selection=='all'">
-    <li ng-repeat="image in $ctrl.imageList">
-        <image-thumb image="image" remove="$ctrl.remove"></image-thumb>
-    </li>
-</ul>
+  <div ng-show="$ctrl.view=='full'" class="full">
+    <div ng-repeat="image in $ctrl.imageList" class="full-container">
+      <image-full image="image" remove="$ctrl.remove"></image-full>
+    </div>
+  </div>
 
-<ul ng-show="$ctrl.selection=='full' || $ctrl.selection=='all'">
-    <li ng-repeat="image in $ctrl.imageList">
-        <image-full image="image" remove="$ctrl.remove"></image-full>
-    </li>
-</ul>
+  <div ng-show="$ctrl.view=='detail'">
+    <div ng-repeat="image in $ctrl.imageList" class="detail-container">
+      <image-detail image="image" remove="$ctrl.remove"></image-detail>
+    </div>
+  </div>
+</div>
