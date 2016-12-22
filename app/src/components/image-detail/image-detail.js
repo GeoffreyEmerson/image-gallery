@@ -12,7 +12,8 @@ export default {
 
 function controller() {
 
-  this.delete = () => {
+  this.delete = ($event) => {
+    $event.stopPropagation();
     this.remove(this.image);
   };
 

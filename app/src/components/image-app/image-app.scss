@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Molle:400i');
 @import 'corners';
 
-$unitPadding: 1.5rem;
-
-#appName {
-  font-family: 'Molle', cursive;
-  font-size: 2rem;
-  background-color: slategray;
-  display: inline-block;
-  margin: 1%;
-  padding: $unitPadding;
-
-  @include rounded(7px);
-}
-
 .view-button-container {
   width: 100%;
   text-align: center;
