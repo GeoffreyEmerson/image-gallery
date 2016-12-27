@@ -9,7 +9,6 @@ router
     if(req.query) query = req.query;
 
     Image.find(query)
-    .select('title description url')
     .lean()
     .then( images => res.send(images) )
     .catch(next);
@@ -17,7 +16,6 @@ router
 
   .get('/:id', (req, res, next) => {
     Image.findById(req.params.id)
-    .select('title description url')
     .lean()
     .then( image => res.send(image) )
     .catch(next);

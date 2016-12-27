@@ -1,3 +1,5 @@
+//process.env.MONGODB_URI = 'mongodb://localhost/image-gallery-test';
+
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const assert = chai.assert;
@@ -10,7 +12,7 @@ const request = chai.request(app);
 describe('Images route', () => {
 
   before( done => {
-    const drop = () => connection.db.dropDatabase(done);
+    const drop = () => connection.db.dropCollection('images',done);
     if (connection.readyState === 1) drop();
     else {
       connection.on('open', drop);
@@ -18,6 +20,7 @@ describe('Images route', () => {
   });
 
   const testImage1 = {
+    __v: 0,
     title: 'Test Image',
     description: 'Description of test image',
     url: 'http://example.com/example.jpg'

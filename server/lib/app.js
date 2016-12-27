@@ -3,6 +3,7 @@ const app = express();
 
 /* custom routes */
 const images = require('./routes/images');
+const albums = require('./routes/albums');
 
 /* middleware */
 const morgan = require('morgan');
@@ -24,6 +25,7 @@ app.use(express.static('./public'));
 /* routes */
 app.use(checkDb);
 app.use('/api/images', images);
+app.use('/api/albums', albums);
 
 app.use(errorHandler);
 
