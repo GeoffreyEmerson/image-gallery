@@ -13,7 +13,7 @@ function controller(galleryService) {
 /********************
   Startup procedure
 *********************/
-
+  this.view = 'detail';
   this.loading = true;
   galleryService
   .get()
@@ -48,10 +48,10 @@ function controller(galleryService) {
     });
   };
 
-  this.remove = gallery => {
+  this.remove = (image,gallery) => {
     this.loading = true;
     galleryService
-    .remove(gallery)
+    .removeImage(gallery)
     .then( deleted => {
       this.loading = false;
       const index = indexOfId(this.galleryList, deleted);

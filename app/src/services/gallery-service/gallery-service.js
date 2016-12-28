@@ -16,6 +16,10 @@ export default function galleryService($http, apiUrl) {
       return $http.put(`${apiUrl}/albums/${gallery._id}`, gallery)
         .then( res => res.data );
     },
+    removeImage(image,gallery) {
+      return $http.delete(`${apiUrl}/albums/remove/${gallery._id}/${image._id}`)
+        .then( res => res.data );
+    },
     remove(gallery) {
       return $http.delete(`${apiUrl}/albums/${gallery._id}`)
         .then( res => res.data );

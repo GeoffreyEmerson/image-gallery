@@ -7,7 +7,7 @@
 </div>
 
 <div class="view-container">
-  <div ng-show="$ctrl.view=='thumb'" class="thumb-view"  ng-click="$ctrl.view='full'">
+  <div ng-show="$ctrl.view=='thumb'" class="thumb-view">
     <div ng-repeat="image in $ctrl.imageList" class="thumb-container">
       <image-thumb image="image" remove="$ctrl.remove"></image-thumb>
     </div>

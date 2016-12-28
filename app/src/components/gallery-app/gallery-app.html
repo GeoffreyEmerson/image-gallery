@@ -1,21 +1,24 @@
 <add-gallery add="$ctrl.add"></add-gallery>
-<!--
-<div class="view-button-container">
-  <div class="view-button" ng-class="{selected: $ctrl.view=='thumb'}" ng-click="$ctrl.view='thumb'">Thumbnail</div>
-  <div class="view-button" ng-class="{selected: $ctrl.view=='full'}" ng-click="$ctrl.view='full'">Full Size</div>
-  <div class="view-button" ng-class="{selected: $ctrl.view=='detail'}" ng-click="$ctrl.view='detail'">Text List</div>
-</div>
 
--->
+<div class="view-button-container">
+  <div class="view-button" ng-class="{selected: $ctrl.view=='detail'}" ng-click="$ctrl.view='detail'">Gallery List</div>
+  <div class="view-button" ng-class="{selected: $ctrl.view=='thumb'}" ng-click="$ctrl.view='thumb'">Thumbnails</div>
+</div>
 
 <div class="view-container">
 
-  <div>
+  <div ng-show="$ctrl.view=='detail'" class="detail-view">
     <div ng-repeat="gallery in $ctrl.galleryList" class="detail-container">
-      <gallery-detail gallery="gallery" remove="$ctrl.remove"></image-detail>
+      <gallery-detail gallery="gallery" remove="$ctrl.remove"></gallery-detail>
     </div>
   </div>
 
+  <div ng-show="$ctrl.view=='thumb'" class="thumb-view">
+    <div ng-repeat="gallery in $ctrl.galleryList" class="thumb-set">
+      <h2>{{gallery.title}}</h2>
+      <gallery-thumb gallery="gallery" remove="$ctrl.remove" class="thumb-container"></gallery-thumb>
+    </div>
+  </div>
 </div>
 
 

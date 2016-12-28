@@ -1,0 +1,8 @@
+<div ng-repeat="image in $ctrl.imageList">
+  <div class="thumb-card">
+    <div class="image-title">{{image.title}}</div class="image-title">
+    <p>{{image.description}}</p>
+    <img ng-src="{{image.url}}" class="thumb"></img>
+    <br>
+    <button ng-click="$ctrl.delete($event,image)">Remove from Gallery</button>
+  </div>

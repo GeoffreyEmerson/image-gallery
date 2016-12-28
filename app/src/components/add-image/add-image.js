@@ -24,6 +24,11 @@ function controller(galleryService) {
   .catch( error => { console.log('Well this sucks:', error);});
 
   this.submit = () => {
-    this.add({title: this.title, description:this.description, url:this.url});
+    this.add({
+      title: this.title,
+      description: this.description,
+      url: this.url,
+      album: this.selectedAlbum
+    });
   };
 }
