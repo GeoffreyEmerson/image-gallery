@@ -1,0 +1,21 @@
+<add-gallery add="$ctrl.add"></add-gallery>
+<!--
+<div class="view-button-container">
+  <div class="view-button" ng-class="{selected: $ctrl.view=='thumb'}" ng-click="$ctrl.view='thumb'">Thumbnail</div>
+  <div class="view-button" ng-class="{selected: $ctrl.view=='full'}" ng-click="$ctrl.view='full'">Full Size</div>
+  <div class="view-button" ng-class="{selected: $ctrl.view=='detail'}" ng-click="$ctrl.view='detail'">Text List</div>
+</div>
+
+-->
+
+<div class="view-container">
+
+  <div>
+    <div ng-repeat="gallery in $ctrl.galleryList" class="detail-container">
+      <gallery-detail gallery="gallery" remove="$ctrl.remove"></image-detail>
+    </div>
+  </div>
+
+</div>
+
+

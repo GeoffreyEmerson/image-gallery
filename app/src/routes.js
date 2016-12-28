@@ -33,5 +33,11 @@ export default function routes($stateProvider,$urlRouterProvider) {
     component:'imageApp'
   });
 
+  $stateProvider.state({
+    name:'galleries',
+    url:'/galleries',
+    component:'galleryApp'
+  });
+
   $urlRouterProvider.otherwise('/');
 }
